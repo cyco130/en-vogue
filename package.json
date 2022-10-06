@@ -1,0 +1,55 @@
+{
+	"name": "-TODO-",
+	"version": "0.0.0",
+	"description": "-TODO-",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"*": [
+				"dist/*.d.ts"
+			]
+		}
+	},
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"prepare": "husky install",
+		"precommit": "lint-staged",
+		"prepack": "rimraf dist && pnpm build",
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"test": "pnpm run test:cq && pnpm run test:unit",
+		"test:cq": "pnpm run test:typecheck && pnpm run test:lint && pnpm run test:prettier",
+		"test:unit": "vitest run",
+		"test:typecheck": "tsc -p tsconfig.json --noEmit",
+		"test:lint": "eslint src --max-warnings 0",
+		"test:prettier": "prettier --check --ignore-path .gitignore --ignore-unknown . '!pnpm-lock.yaml'",
+		"format": "prettier . --write --ignore-path .gitignore --ignore-unknown . '!pnpm-lock.yaml'"
+	},
+	"devDependencies": {
+		"@cyco130/eslint-config": "^2.1.1",
+		"@types/node": "18.7.18",
+		"eslint": "^8.20.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"rimraf": "^3.0.2",
+		"tsup": "^6.2.1",
+		"typescript": "^4.7.4",
+		"vitest": "^0.23.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cyco130/-TODO-.git"
+	},
+	"keywords": [
+		"-TODO-"
+	],
+	"author": "Fatih Aygün <cyco130@gmail.com>",
+	"license": "MIT"
+}
