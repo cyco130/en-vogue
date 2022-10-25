@@ -2,6 +2,8 @@
 
 Zero-runtime CSS-in-JS with static CSS extraction. Currently a proof of concept, implemented as a [Vite plugin](https://vitejs.dev).
 
+> [Try on StackBlitz](https://stackblitz.com/edit/vitejs-vite-yvbldw?file=vite.config.ts,src%2FApp.tsx)
+
 ## Features
 
 - Convenience of CSS-in-JS with **zero runtime overhead** (unlike [Emotion](https://emotion.sh) or [Styled Components](https://styled-components.com))
