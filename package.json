@@ -1,12 +1,19 @@
 {
-	"name": "-TODO-",
-	"version": "0.0.0",
-	"description": "-TODO-",
+	"name": "en-vogue",
+	"version": "0.0.1",
+	"description": "Zero-runtime CSS-in-JS with static CSS extraction",
 	"type": "module",
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
+		},
+		"./vite": {
+			"import": "./dist/vite.js",
+			"require": "./dist/vite.cjs"
 		}
 	},
 	"typesVersions": {
@@ -31,9 +38,22 @@
 		"test:prettier": "prettier --check --ignore-path .gitignore --ignore-unknown . '!pnpm-lock.yaml'",
 		"format": "prettier . --write --ignore-path .gitignore --ignore-unknown . '!pnpm-lock.yaml'"
 	},
+	"peerDependencies": {
+		"vite": "3.x"
+	},
+	"dependencies": {
+		"@babel/core": "^7.19.6",
+		"@babel/types": "^7.19.4",
+		"csstype": "^3.1.1",
+		"postcss": "^8.4.18",
+		"postcss-js": "^4.0.0",
+		"postcss-nested": "^6.0.0"
+	},
 	"devDependencies": {
 		"@cyco130/eslint-config": "^2.1.1",
+		"@types/babel__core": "^7.1.19",
 		"@types/node": "18.7.18",
+		"@types/postcss-js": "^4.0.0",
 		"eslint": "^8.20.0",
 		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
@@ -41,14 +61,16 @@
 		"rimraf": "^3.0.2",
 		"tsup": "^6.2.1",
 		"typescript": "^4.7.4",
+		"vite": "^3.1.8",
 		"vitest": "^0.23.4"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/cyco130/-TODO-.git"
+		"url": "git+https://github.com/cyco130/en-vogue.git"
 	},
 	"keywords": [
-		"-TODO-"
+		"vite-plugin",
+		"css-in-js"
 	],
 	"author": "Fatih Aygün <cyco130@gmail.com>",
 	"license": "MIT"
